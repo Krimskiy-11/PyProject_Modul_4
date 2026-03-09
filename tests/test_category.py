@@ -21,4 +21,4 @@ def test_category(first_category):
     assert len(first_category.products.split("\n")) == 4
 
     assert first_category.product_count == 3
-
+    
