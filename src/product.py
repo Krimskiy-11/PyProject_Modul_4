@@ -24,12 +24,7 @@ class Product:
 
     @price.setter
     def price(self, value):
-        if value <= 0:
+        if value > 0:
+            self.__price = value
+        else:
             print("Цена не должна быть нулевая или отрицательная")
-            return
-        self.__price = value
-
-
-
-
-
