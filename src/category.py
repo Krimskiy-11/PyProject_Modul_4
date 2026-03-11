@@ -19,7 +19,7 @@ class Category:
 
     def add_product(self, new_product: Product):
         self.__products.append(new_product)
-        Category.product_count += 1
+        self.product_count += 1
 
     @property
     def products(self):
@@ -27,3 +27,8 @@ class Category:
         for product in self.__products:
             prod_list += f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n'
         return prod_list
+
+
+
+
+
