@@ -10,7 +10,7 @@ def test_product(first_product):
     assert first_product.price == 105_000
     assert first_product.quantity == 1
 
-    # Функционал (урок 14.2)
+    # Функционал (урок 14.2.)
 
     second_product = Product.new_product(
         {"name": "Samsung Galaxy S23 Ultra", "description": "256GB, Серый цвет, 200MP камера", "price": 180000.0,
