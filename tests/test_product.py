@@ -3,7 +3,7 @@ from src.product import Product
 
 def test_product(first_product):
 
-    # Функционал (урок 14.1)
+    # Функционал (урок 14.1.)
 
     assert first_product.name == "IPhone 15 Pro"
     assert first_product.description == "128GB, White"
