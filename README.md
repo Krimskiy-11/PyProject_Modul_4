@@ -26,6 +26,7 @@ pytest tests/
 ```
 pytest tests/test_category.py
 pytest tests/test_product.py
+pytest tests/test_iterator.py
 ```
 3. Проверка покрытия тестами:
 ```
