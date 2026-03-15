@@ -13,8 +13,13 @@ def test_product(first_product):
     # Функционал (урок 14.2.)
 
     second_product = Product.new_product(
-        {"name": "Samsung Galaxy S23 Ultra", "description": "256GB, Серый цвет, 200MP камера", "price": 180000.0,
-         "quantity": 5})
+        {
+            "name": "Samsung Galaxy S23 Ultra",
+            "description": "256GB, Серый цвет, 200MP камера",
+            "price": 180000.0,
+            "quantity": 5,
+        }
+    )
     assert second_product.name == "Samsung Galaxy S23 Ultra"
     assert second_product.description == "256GB, Серый цвет, 200MP камера"
     assert second_product.price == 180000.0
@@ -28,3 +33,8 @@ def test_product(first_product):
 
     second_product.price = 0
     assert second_product.price == 11_000
+
+    # Функционал (урок 15.1.)
+
+    assert str(first_product) == "IPhone 15 Pro, 105000 руб. Остаток: 1 шт."
+    assert first_product + second_product == 160000
