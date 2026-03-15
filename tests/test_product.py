@@ -1,7 +1,7 @@
 from src.product import Product
 
 
-def test_product(first_product):
+def test_product(first_product, first_phone, second_phone, first_grass, second_grass):
 
     # Функционал (урок 14.1.)
 
@@ -38,3 +38,17 @@ def test_product(first_product):
 
     assert str(first_product) == "IPhone 15 Pro, 105000 руб. Остаток: 1 шт."
     assert first_product + second_product == 160000
+
+    # Функционал (урок 16.1.)
+
+    sum_product_phones = first_phone + second_phone
+    sum_product_grasses = first_grass + second_grass
+    assert sum_product_phones == 2114000
+    assert sum_product_grasses == 16750
+
+    try:
+        error_sum = first_phone + first_grass
+    except TypeError:
+        print("Ошибка")
+    else:
+        assert error_sum == 116000
