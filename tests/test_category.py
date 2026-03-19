@@ -1,7 +1,8 @@
+from src.category import Category
 from src.product import Product
 
 
-def test_category(first_category):
+def test_category(first_category, first_phone, second_phone):
 
     # Функционал (урок 14.1)
 
@@ -26,3 +27,16 @@ def test_category(first_category):
     # Функционал (урок 15.1)
 
     assert str(first_category) == "Smartphones, количество продуктов: 20 шт."
+
+    # Функционал (урок 16.1)
+
+    first_category.add_product(first_phone)
+    first_category.add_product(second_phone)
+    assert Category.product_count == 5
+
+    try:
+        first_category.add_product("No product")
+    except TypeError:
+        print("Ошибка")
+    else:
+        assert Category.product_count == 6
