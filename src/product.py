@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class ProductBase(ABC):
+class BaseProduct(ABC):
 
     @abstractmethod
     def __init__(self, name, description, price, quantity):
@@ -27,7 +27,7 @@ class MixinLog:
         return f"{self.__class__.__name__}({self.name}, {self.description}, {self.price}, {self.quantity})"
 
 
-class Product(ProductBase, MixinLog):
+class Product(BaseProduct, MixinLog):
     name: str
     description: str
     price: int
