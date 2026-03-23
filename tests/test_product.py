@@ -52,3 +52,11 @@ def test_product(first_product, first_phone, second_phone, first_grass, second_g
         print("Ошибка")
     else:
         assert error_sum == 116000
+
+    # Функционал (урок 16.2.)
+
+
+def test_mixin_log(capsys):
+    Product("IPhone 15 Pro", "128GB, White", 105000, 1)
+    massage = capsys.readouterr()
+    assert massage.out.strip() == "Product(IPhone 15 Pro, 128GB, White, 105000, 1)"
