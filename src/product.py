@@ -37,6 +37,8 @@ class Product(BaseProduct, MixinLog):
         self.name = name
         self.description = description
         self.__price = price
+        if quantity <= 0:
+            raise ValueError("Товар с нулевым количеством не может быть добавлен")
         self.quantity = quantity
         super().__init__(name, description, price, quantity)
         MixinLog.__init__(self)
