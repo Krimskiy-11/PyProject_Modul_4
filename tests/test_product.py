@@ -1,3 +1,5 @@
+import pytest
+
 from src.product import Product
 
 
@@ -60,3 +62,10 @@ def test_mixin_log(capsys):
     Product("IPhone 15 Pro", "128GB, White", 105000, 1)
     massage = capsys.readouterr()
     assert massage.out.strip() == "Product(IPhone 15 Pro, 128GB, White, 105000, 1)"
+
+    # Функционал (урок 17.1.)
+
+
+def test_product_with_zero_quantity():
+    with pytest.raises(ValueError):
+        Product("IPhone 15 Pro", "128GB, White", 105000, 0)

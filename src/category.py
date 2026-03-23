@@ -24,6 +24,15 @@ class Category:
         else:
             raise TypeError
 
+    def middle_price(self):
+        try:
+            total = 0
+            for x in self.product_list:
+                total += x.price * x.quantity
+            return round(total / Category.product_count, 2)
+        except ZeroDivisionError:
+            print(0.0)
+
     @property
     def products(self):
         prod_list = ""

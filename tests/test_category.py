@@ -40,3 +40,11 @@ def test_category(first_category, first_phone, second_phone):
         print("Ошибка")
     else:
         assert Category.product_count == 6
+
+    # Функционал (урок 17.1)
+
+    assert first_category.middle_price() == 1111000.0
+
+    category_empty = Category("Пустая категория", "Категория без продуктов", [])
+
+    assert category_empty.middle_price() == 0.0
